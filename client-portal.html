@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal | Justice &amp; Associates Law Firm</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-main">
+      <p class="site-logo"><a href="index.html"><img src="images/logo.svg" alt="Justice &amp; Associates — law firm logo" width="320" height="56"></a></p>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu">[ Menu ]</button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-bracket">[ Home ]</a>
+        <a href="services.html" class="nav-bracket">[ Services ]</a>
+        <a href="client-portal.html" class="nav-bracket">[ Client Portal ]</a>
+        <a href="lawyer-portal.html" class="nav-bracket">[ Lawyer Portal ]</a>
+        <a href="feedback.html" class="nav-bracket">[ Feedback ]</a>
+        <a href="contact.html" class="nav-bracket">[ Contact ]</a>
+      </nav>
+      <h1 class="hero-tagline">Client Portal — Send &amp; Receive Case Updates</h1>
+    </div>
+  </header>
+
+  <main class="container-main">
+    <p class="alert-info-custom">Demo: messages save in your browser. Your advocate replies via <a href="lawyer-portal.html">Lawyer Portal</a>.</p>
+
+    <section>
+      <p class="form-label-heading">[ Send Update ]</p>
+      <div id="clientAlert" class="alert-success-custom d-none" role="alert">Update sent successfully!</div>
+      <form id="clientForm" class="needs-validation" novalidate>
+        <label for="caseId">Case ID:</label>
+        <input type="text" class="form-control" id="caseId" required pattern="CASE-[0-9]{3}" value="CASE-001" placeholder="CASE-001">
+        <div class="invalid-feedback">Use format CASE-001</div>
+
+        <label for="subject">Subject:</label>
+        <input type="text" class="form-control" id="subject" required minlength="3" placeholder="e.g. Hearing date question">
+        <div class="invalid-feedback">Subject required.</div>
+
+        <label for="body">Message:</label>
+        <textarea class="form-control" id="body" rows="3" required minlength="5" placeholder="Your update"></textarea>
+        <div class="invalid-feedback">Message required.</div>
+
+        <button type="submit" class="btn-bracket">[ Send to Advocate ]</button>
+      </form>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2>Case Updates</h2>
+      <label for="filterCase">Filter by Case ID:</label>
+      <input type="text" class="form-control" id="filterCase" placeholder="CASE-001" style="max-width:200px">
+      <div id="messageList" class="message-list" style="margin-top:16px"></div>
+    </section>
+  </main>
+
+  <hr class="section-divider">
+  <footer class="site-footer">
+    <div class="container-main">
+      <p>Contact us: +267 123 4567 | <a href="mailto:info@justiceassociates.co.bw">info@justiceassociates.co.bw</a></p>
+      <p class="copyright">&copy; 2026 Justice &amp; Associates. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/messages.js"></script>
+  <script>initPortal("client", "clientForm", "messageList", "clientAlert", "filterCase");</script>
+</body>
+</html>

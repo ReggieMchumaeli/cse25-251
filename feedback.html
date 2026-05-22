@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback | Justice &amp; Associates Law Firm</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-main">
+      <p class="site-logo"><a href="index.html"><img src="images/logo.svg" alt="Justice &amp; Associates — law firm logo" width="320" height="56"></a></p>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu">[ Menu ]</button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-bracket">[ Home ]</a>
+        <a href="services.html" class="nav-bracket">[ Services ]</a>
+        <a href="client-portal.html" class="nav-bracket">[ Client Portal ]</a>
+        <a href="lawyer-portal.html" class="nav-bracket">[ Lawyer Portal ]</a>
+        <a href="feedback.html" class="nav-bracket">[ Feedback ]</a>
+        <a href="contact.html" class="nav-bracket">[ Contact ]</a>
+      </nav>
+      <h1 class="hero-tagline">Client Feedback</h1>
+    </div>
+  </header>
+
+  <main class="container-main">
+    <p class="form-label-heading">[ Feedback Form ]</p>
+    <div id="feedbackSuccess" class="alert-success-custom d-none" role="alert">Thank you for your feedback!</div>
+
+    <form id="feedbackForm" class="needs-validation" novalidate method="post" action="feedback.html">
+      <label for="feedbackName">Name:</label>
+      <input type="text" class="form-control" id="feedbackName" name="name" required minlength="2" placeholder="Your full name">
+      <div class="invalid-feedback">Name is required (min 2 characters).</div>
+
+      <label for="feedbackEmail">Email:</label>
+      <input type="email" class="form-control" id="feedbackEmail" name="email" required placeholder="you@email.com">
+      <div class="invalid-feedback">Valid email required.</div>
+
+      <label for="feedbackRating">Rating:</label>
+      <select class="form-select" id="feedbackRating" name="rating" required>
+        <option value="">Choose rating...</option>
+        <option value="5">Excellent (5)</option>
+        <option value="4">Very Good (4)</option>
+        <option value="3">Good (3)</option>
+        <option value="2">Fair (2)</option>
+        <option value="1">Poor (1)</option>
+      </select>
+      <div class="invalid-feedback">Please select a rating.</div>
+
+      <label for="feedbackService">Service Used:</label>
+      <select class="form-select" id="feedbackService" name="service" required>
+        <option value="">Select service...</option>
+        <option value="family">Family Law</option>
+        <option value="criminal">Criminal Defence</option>
+        <option value="corporate">Corporate Law</option>
+        <option value="other">Other</option>
+      </select>
+      <div class="invalid-feedback">Please select a service.</div>
+
+      <label for="feedbackComments">Comments:</label>
+      <textarea class="form-control" id="feedbackComments" name="comments" rows="4" required minlength="10" placeholder="Your experience (min 10 characters)"></textarea>
+      <div class="invalid-feedback">Comments required (min 10 characters).</div>
+
+      <label>
+        <input type="checkbox" id="feedbackConsent" name="consent" required>
+        I agree my feedback may be used to improve services
+      </label>
+      <div class="invalid-feedback">You must agree before submitting.</div>
+
+      <p style="margin-top:16px">
+        <button type="submit" class="btn-bracket">[ Submit ]</button>
+        <a href="index.html" class="btn-bracket">[ Home ]</a>
+      </p>
+    </form>
+  </main>
+
+  <hr class="section-divider">
+  <footer class="site-footer">
+    <div class="container-main">
+      <p>Contact us: +267 123 4567 | <a href="mailto:info@justiceassociates.co.bw">info@justiceassociates.co.bw</a></p>
+      <p>Follow us:</p>
+      <p class="social-links">
+        <a href="https://www.facebook.com" class="nav-bracket" target="_blank" rel="noopener">[ Facebook ]</a>
+        <a href="https://www.instagram.com" class="nav-bracket" target="_blank" rel="noopener">[ Instagram ]</a>
+        <a href="https://www.twitter.com" class="nav-bracket" target="_blank" rel="noopener">[ Twitter ]</a>
+      </p>
+      <p class="copyright">&copy; 2026 Justice &amp; Associates. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>handleFormSubmit("feedbackForm", "feedbackSuccess");</script>
+</body>
+</html>

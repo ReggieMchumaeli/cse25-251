@@ -1,0 +1,49 @@
+/* Justice & Associates - Dark wireframe template theme */
+:root {
+  --bg-dark: #1e1e24;
+  --bg-panel: #2a2a32;
+  --text-light: #e8e8e8;
+  --text-muted: #a0a0a8;
+  --border-line: #4a4a55;
+  --accent: #c9a227;
+  --btn-bg: #3d3d48;
+}
+// ... body, container, header, nav-bracket, hero-banner ...
+
+.nav-bracket {
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.btn-bracket {
+  display: inline-block;
+  background: var(--btn-bg);
+  border: 1px solid var(--border-line);
+  color: var(--text-light);
+  padding: 4px 12px;
+  /* ... */
+}
+
+.site-logo {
+  margin: 0 0 0.75rem;
+}
+
+.site-logo a {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.site-logo img {
+  display: block;
+  height: 48px;
+  width: auto;
+  max-width: min(100%, 320px);
+}
+
+.site-logo a:hover img,
+.site-logo a:focus-visible img {
+  opacity: 0.9;
+}
